@@ -1,0 +1,170 @@
+:root {
+  --main-color: #ffb6c1;
+  --text-color: white;
+  --bg-color: #2a2a2a;
+}
+
+/* Imagen decorativa en la pantalla de bienvenida */
+.decor-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+
+#welcome-screen {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+#welcome-screen h1 {
+  font-size: 28px;
+  color: var(--main-color);
+}
+
+#welcome-screen p {
+  font-size: 20px;
+  color: #ffd5dc;
+  max-width: 90%;
+}
+
+#welcome-screen button {
+  padding: 10px 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 15px;
+  background-color: var(--main-color);
+  color: var(--bg-color);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#welcome-screen button:hover {
+  background-color: #ff91a4;
+}
+
+#game-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.reason-image {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+  animation: float 1s infinite alternate ease-in-out;
+  transition: transform 0.2s;
+}
+
+.reason-image:hover {
+  transform: scale(1.1);
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+#message-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffb6c1;  /* Rosa pastel */
+  padding: 20px 30px;
+  border-radius: 15px;
+  font-size: 18px;
+  text-align: center;
+  color: #2a2a2a;             /* Texto oscuro para buen contraste */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+#final-message {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  color: var(--main-color);
+  line-height: 1.6em;
+}
+
+/* Imagen decorativa para el mensaje final */
+.final-decor {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 90px;
+  height: auto;
+  opacity: 0.9;
+  animation: float 3s infinite ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
+.bottom-decorations {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  padding-bottom: 10px;
+}
+
+.bottom-icon {
+  width: 120px;
+  height: 120px;
+  opacity: 0.95;
+  animation: pop 3s infinite ease-in-out;
+}
+
+@keyframes pop {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@media (max-width: 480px) {
+  #welcome-screen h1 {
+    font-size: 22px;
+  }
+
+  #welcome-screen p {
+    font-size: 16px;
+  }
+
+  #welcome-screen button {
+    font-size: 16px;
+    padding: 8px 30px;
+  }
+}
