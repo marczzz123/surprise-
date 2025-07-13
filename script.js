@@ -18,15 +18,15 @@ const reasons = [
 ];
 
 const difficulty = [
-  { duration: 1500 },
-  { duration: 1100 },
-  { duration: 940 },
+  { duration: 1000 },
   { duration: 900 },
+  { duration: 940 },
   { duration: 860 },
-  { duration: 800 },
-  { duration: 750 },
-  { duration: 720 },
+  { duration: 760 },
+  { duration: 630 },
   { duration: 600 },
+  { duration: 570 },
+  { duration: 500 },
   { duration: 480 }
 ];
 
