@@ -197,9 +197,15 @@ html, body {
     padding: 8px 30px;
   }
 
-  .decor-img {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 5px;
+  #message-box {
+    font-size: 16px;
+    padding: 18px 24px;
+  }
+
+  #message-box.long-message {
+    font-size: 13px;
+    line-height: 1.3em;
+    padding: 15px 20px;
   }
 }
+
