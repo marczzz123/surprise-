@@ -18,16 +18,16 @@ const reasons = [
 ];
 
 const difficulty = [
-  { duration: 1600 },
-  { duration: 1200 },
   { duration: 1000 },
-  { duration: 900 },
-  { duration: 960 },
-  { duration: 900 },
-  { duration: 850 },
-  { duration: 700 },
-  { duration: 600 },
-  { duration: 500 }
+  { duration: 980 },
+  { duration: 920 },
+  { duration: 800 },
+  { duration: 760 },
+  { duration: 720 },
+  { duration: 680 },
+  { duration: 640 },
+  { duration: 500 },
+  { duration: 480 }
 ];
 
 let currentIndex = 0;
