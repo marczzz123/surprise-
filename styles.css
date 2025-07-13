@@ -182,6 +182,10 @@ html, body {
 .hidden {
   display: none !important;
 }
+.bottom-icon {
+  width: 110px;
+  height: auto;
+}
 
 @media (max-width: 480px) {
   #welcome-screen h1 {
