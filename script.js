@@ -58,13 +58,8 @@ function spawnNextImage() {
 
   gameContainer.appendChild(img);
 
-  let timer = setTimeout(() => {
-    img.remove();
-    spawnNextImage(); // reintenta si no se atrapa
-  }, difficulty[currentIndex].duration);
-
+  // Elimina el temporizador, solo avanza si se hace clic
   img.addEventListener('click', () => {
-    clearTimeout(timer);
     img.remove();
     showMessage(reasons[currentIndex]);
   });
@@ -74,10 +69,26 @@ function showMessage(text) {
   messageBox.textContent = text;
   messageBox.classList.remove('hidden');
 
-  setTimeout(() => {
+  // Crear o reutilizar el botón "Siguiente"
+  let nextBtn = document.getElementById('next-btn');
+  if (!nextBtn) {
+    nextBtn = document.createElement('button');
+    nextBtn.id = 'next-btn';
+    nextBtn.textContent = 'next <3';
+    // No agregues múltiples <br> si el botón ya existe
+    messageBox.appendChild(document.createElement('br'));
+    messageBox.appendChild(nextBtn);
+  } else {
+    nextBtn.classList.remove('hidden');
+    // Asegura que el botón esté al final del messageBox
+    messageBox.appendChild(nextBtn);
+  }
+
+  nextBtn.onclick = () => {
     messageBox.classList.add('hidden');
+    nextBtn.classList.add('hidden');
     currentIndex++;
     spawnNextImage();
-  }, 6000);
+  };
 }
 
