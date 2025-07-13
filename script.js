@@ -24,10 +24,10 @@ const difficulty = [
   { duration: 600 },
   { duration: 570 },
   { duration: 530 },
-  { duration: 500 },
-  { duration: 460 },
+  { duration: 450 },
   { duration: 420 },
-  { duration: 300 }
+  { duration: 400 },
+  { duration: 370 }
 ];
 
 
