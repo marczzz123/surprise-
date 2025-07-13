@@ -30,6 +30,7 @@ const difficulty = [
   { duration: 480 }
 ];
 
+
 let currentIndex = 0;
 
 startButton.addEventListener('click', () => {
@@ -83,6 +84,13 @@ function showMessage(text) {
   messageBox.textContent = text;
   messageBox.classList.remove('hidden');
 
+  // Aplica estilo de texto largo en celulares
+  if (currentIndex === 9) {
+    messageBox.classList.add('long-message');
+  } else {
+    messageBox.classList.remove('long-message');
+  }
+
   let nextBtn = document.getElementById('next-btn');
   if (!nextBtn) {
     nextBtn = document.createElement('button');
@@ -102,4 +110,6 @@ function showMessage(text) {
     spawnNextImage();
   };
 }
+
+
 
