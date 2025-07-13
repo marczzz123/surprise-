@@ -18,15 +18,15 @@ const reasons = [
 ];
 
 const difficulty = [
-  { duration: 1000 },
-  { duration: 980 },
-  { duration: 920 },
+  { duration: 1500 },
+  { duration: 1100 },
+  { duration: 940 },
+  { duration: 900 },
+  { duration: 860 },
   { duration: 800 },
-  { duration: 760 },
+  { duration: 750 },
   { duration: 720 },
-  { duration: 680 },
-  { duration: 640 },
-  { duration: 500 },
+  { duration: 600 },
   { duration: 480 }
 ];
 
@@ -47,6 +47,9 @@ function spawnNextImage() {
     return;
   }
 
+  // Asegúrate de que no haya corazones viejos
+  gameContainer.innerHTML = "";
+
   const img = document.createElement('img');
   img.src = `corazon${currentIndex + 1}.png`;
   img.className = 'reason-image';
@@ -58,8 +61,19 @@ function spawnNextImage() {
 
   gameContainer.appendChild(img);
 
-  // Elimina el temporizador, solo avanza si se hace clic
+  // Guardamos el temporizador para borrarlo si lo atrapa
+  const respawnDelay = difficulty[currentIndex].duration;
+  let respawnTimer = setTimeout(function retry() {
+    // Si no ha hecho clic, desaparece y reaparece en otro lugar
+    if (gameContainer.contains(img)) {
+      img.remove();
+      spawnNextImage(); // vuelve a generar el mismo corazón
+    }
+  }, respawnDelay);
+
+  // Si lo atrapa, mostramos mensaje y cancelamos el bucle
   img.addEventListener('click', () => {
+    clearTimeout(respawnTimer);
     img.remove();
     showMessage(reasons[currentIndex]);
   });
@@ -69,18 +83,15 @@ function showMessage(text) {
   messageBox.textContent = text;
   messageBox.classList.remove('hidden');
 
-  // Crear o reutilizar el botón "Siguiente"
   let nextBtn = document.getElementById('next-btn');
   if (!nextBtn) {
     nextBtn = document.createElement('button');
     nextBtn.id = 'next-btn';
     nextBtn.textContent = 'next <3';
-    // No agregues múltiples <br> si el botón ya existe
     messageBox.appendChild(document.createElement('br'));
     messageBox.appendChild(nextBtn);
   } else {
     nextBtn.classList.remove('hidden');
-    // Asegura que el botón esté al final del messageBox
     messageBox.appendChild(nextBtn);
   }
 
