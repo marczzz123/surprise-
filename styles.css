@@ -67,6 +67,22 @@ html, body {
   background-color: #ff91a4;
 }
 
+#next-btn {
+  padding: 10px 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 15px;
+  background-color: var(--main-color);
+  color: var(--bg-color);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+#next-btn:hover {
+  background-color: #ff91a4;
+}
+
 #game-container {
   position: relative;
   width: 100vw;
@@ -108,30 +124,32 @@ html, body {
 }
 
 #final-message {
-  position: absolute;
-  top: 40%;
-  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   text-align: center;
   font-size: 24px;
   color: var(--main-color);
   line-height: 1.6em;
+  background: transparent;
+  z-index: 100;
 }
 
-/* Imagen decorativa para el mensaje final */
-.final-decor {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 90px;
-  height: auto;
-  opacity: 0.9;
-  animation: float 3s infinite ease-in-out;
+#final-message p {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.hidden {
-  display: none;
-}
-
+/* Contenedor de decoraciones abajo para la pantalla de bienvenida */
 .bottom-decorations {
   position: absolute;
   bottom: 30px;
@@ -142,16 +160,27 @@ html, body {
   padding-bottom: 10px;
 }
 
-.bottom-icon {
-  width: 120px;
-  height: 120px;
-  opacity: 0.95;
-  animation: pop 3s infinite ease-in-out;
+/* Contenedor de decoraciones abajo para el mensaje final */
+.final-bottom-decorations {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 40px;
+  padding-bottom: 30px;
+  z-index: 11;
 }
 
-@keyframes pop {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+/* Imagen decorativa para el mensaje final */
+.final-decor {
+  width: 90px;
+  height: auto;
+  opacity: 0.9;
+  animation: float 3s infinite ease-in-out;
+}
+
+.hidden {
+  display: none !important;
 }
 
 @media (max-width: 480px) {
@@ -168,3 +197,14 @@ html, body {
     padding: 8px 30px;
   }
 }
+  
+
+  #welcome-screen p {
+    font-size: 16px;
+  }
+
+  #welcome-screen button {
+    font-size: 16px;
+    padding: 8px 30px;
+  }
+
