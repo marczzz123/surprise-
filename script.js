@@ -14,7 +14,7 @@ const reasons = [
   "Because ever since you left, nothing has felt the same… and there are empty spaces only you could fill.",
   "Because no matter how many people I talk to… none of them touches my heart the way you used to.",
   "Because you might meet many people… but no one will give you as many surprises, love, and tenderness as I do. You know it, right? I'm one of a kind.",
-  "Because if you gave me one more chance… I’d love to talk more, to avoid misunderstandings. I only need you—just you. We’ll have many kids, right? 😅 I don’t need anyone else, only my mommy. I’d take care of you more than I do myself, because that’s what I believe you deserve. And between you and me… I don’t think you’ll beat level 9. 😏"
+  "Because if you gave me one more chance… I’d love to talk more, to avoid misunderstandings. I only need you—just you. We’ll have many kids, right? 😅 I don’t need anyone else, only my mommy. I’d take care of you more than I do myself, because that’s what I believe you deserve. And between you and me.. I don’t think you’ll beat level 9"
 ];
 
 const difficulty = [
