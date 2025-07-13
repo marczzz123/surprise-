@@ -6,8 +6,8 @@
 
 /* Imagen decorativa en la pantalla de bienvenida */
 .decor-img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
   margin-bottom: 10px;
   animation: pulse 2s infinite ease-in-out;
@@ -115,7 +115,7 @@ html, body {
   background-color: #ffb6c1;  /* Rosa pastel */
   padding: 20px 30px;
   border-radius: 15px;
-  font-size: 18px;
+  font-size: 13px;
   text-align: center;
   color: #2a2a2a;             /* Texto oscuro para buen contraste */
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
